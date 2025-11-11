@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Glory:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root{
+    --blauElectric: #354BF0;
+    --blauFort: #5494e7;
+    --violeta: #5933f0;
+    --blauFosc: #223d60;
+    --blanc: #ffffff;
+}
+
+*{
+    font-family: "Glory";
+    color: var(--blauFosc);
+    margin: 0;
+}
+
+header {
+    background-color: var(--blauFort);
+    padding: 2em;
+    text-align: center;
+}
+
+nav{
+    background-color: var(--blauFosc);
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn{
+    background-color: var(--violeta);
+    color: var(--blanc);
+    margin: 0.2em;
+}
+
+.btn:hover{
+    background-color: var(--blauFort);
+}
+
+.texto{
+    background-color: var(--blauFort);
+    padding: 1em;
+    font-size: 1.2em;
+    border-radius: 0; 
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.foto{
+    background-color: var(--violeta);
+    padding: 1em;
+    text-align: center;
+}
+
+.foto img {
+    width: 60%;       
+    max-width: 450px; 
+    height: auto;     
+    border-radius: 0.7em;
+}
+
+/* Mida diferent per la imatge inicial */
+.foto img[src="img/interrogant.jpg"] {
+    width: 60%;       
+    max-width: 750px;
+    height: auto;
+}
+
+/* Classes per canviar el color de fons segons estat */
+.texto.felic { background-color: #fff178; }
+.texto.trist { background-color: #90CAF9; }
+.texto.enfadat { background-color: #efa3a2; }
+.texto.relaxat { background-color: #A5D6A7; }
+.texto.desanimat { background-color: #BDBDBD; }
+.texto.confiat { background-color: #fbb5f1; }
+.texto.emocionat { background-color: #a8fbe5; }
+.texto.insegur { background-color: #ceb2fe; }
+
+/* Confeti style */
+.texto span {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Animació bombeig */
+@keyframes bombeig {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.img-bombeig {
+    animation: bombeig 0.6s ease-in-out;
+}
